@@ -1,0 +1,173 @@
+@use "../abstracts/" as *;
+
+/* Start Quiz Header */
+
+.quiz-header {
+  @include flex-container(
+    $display: flex,
+    $wrap: wrap,
+    $justify: space-between,
+    $align: baseline
+  );
+
+  // Intro Header
+  .intro-header {
+    @include flex-container($gap: var(--px-20));
+    .intro-user-name {
+      .user-name {
+        @include text-property($f-size: var(--rem-18));
+      }
+    }
+    .intro-user-image {
+      .quiz-user-image {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
+// Quiz Container
+.quiz-container {
+  .quiz {
+    @include flex-container(
+      $display: flex,
+      $direction: row,
+      $wrap: wrap,
+      $justify: space-between,
+      $align: flex-start,
+      $gap: var(--px-50)
+    );
+    @include media-query("down", "lg") {
+      @include flex-container($direction: column-reverse);
+    }
+    .quiz-area-box {
+      flex: 1;
+      @include flex-container($display: flex, $direction: column);
+      @include media-query("down", "lg") {
+        width: 100%;
+      }
+      .quiz-play {
+        display: none;
+      }
+      &.blur-box {
+        position: relative;
+        .quiz-play {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          @include prefixs(backdrop-filter, blur(5px));
+          display: block;
+          i {
+            @include center;
+            font-size: 40px;
+            cursor: pointer;
+            color: var(--main-color);
+          }
+        }
+      }
+      // quiz title
+      .quiz-title {
+        flex-basis: 100px;
+        @include text-property(
+          $f-color: var(--color-1),
+          $f-size: var(--rem-30),
+          $f-status: capitalize,
+          $f-weight: 500
+        );
+      }
+      // quiz-content
+      .quiz-content {
+        margin-bottom: var(--px-50);
+        .questions-list {
+          @include flex-container(
+            $display: flex,
+            $direction: column,
+            $wrap: wrap,
+            $gap: var(--px-15)
+          );
+          .question {
+            background-color: var(--white-color);
+            @include padding("full", var(--rem-10));
+            @include border("full", var(--color-12));
+            @include radius(var(--px-5));
+            @include flex-container(
+              $display: flex,
+              $direction: row,
+              $align: center,
+              $gap: var(--px-15)
+            );
+            cursor: pointer;
+            @include prefixs(transition, (background-color 0.3s linear));
+            @include media-query("down", "lg") {
+            }
+            %same-style {
+              @include text-property(
+                $f-color: var(--color-11),
+                $f-size: var(--rem-15),
+                $f-status: capitalize
+              );
+            }
+            .question-number {
+              @include flex-container(
+                $display: flex,
+                $justify: center,
+                $align: center
+              );
+              width: var(--px-50);
+              height: var(--px-50);
+              background-color: var(--color-13);
+              @include padding("full", var(--px-20));
+              @include radius(var(--px-3));
+              .num {
+                @extend %same-style;
+                @include text-property($f-weight: 500);
+              }
+            }
+            .question-content {
+              flex-grow: 1;
+              @include flex-container(
+                $display: flex,
+                $justify: space-between,
+                $align: center
+              );
+              .ques {
+                width: 85%;
+                line-height: 1.5;
+                @extend %same-style;
+              }
+              .main-check-mark {
+                @include prefixs(transform, translateX(-10px));
+                width: var(--px-25);
+                height: var(--px-25);
+              }
+            }
+            &.active {
+              background-color: var(--color-7);
+              @include border("full", var(--main-color), 2px);
+              .question-number {
+                background-color: var(--color-15);
+              }
+              .question-content {
+                .main-check-mark {
+                  display: block;
+                }
+              }
+            }
+            &:not(&.active):hover {
+              background-color: var(--color-7);
+            }
+          }
+        }
+      }
+      // Send Button
+      .quiz-send {
+        .main-sign {
+          width: fit-content;
+          @include padding("full", var(--px-20));
+        }
+      }
+    }
+  }
+}
+
+/* End Quiz Header */

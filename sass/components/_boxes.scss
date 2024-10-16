@@ -1,0 +1,114 @@
+@use "../abstracts/" as *;
+
+.application-wallpaper {
+  background-color: var(--color-3);
+  @include padding("top", var(--rem-100));
+  @include padding("bottom", var(--rem-100));
+}
+
+/* Overlay Hover */
+.over-lay-hover {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-5);
+    @include prefixs(transform, translateX(-100%));
+    @include prefixs(transition, transform 0.4s linear);
+    z-index: -1;
+  }
+  &:hover {
+    &::before {
+      @include prefixs(transform, translateX(0));
+    }
+  }
+}
+
+/* User Info User Name And Image  */
+// Haeder
+.intro-header {
+  @include flex-container(
+    $display: flex,
+    $direction: row,
+    $wrap: wrap,
+    $justify: space-between,
+    $align: center
+  );
+  // User name
+  .intro-user-name {
+    @include text-property(
+      $f-color: var(--color-1),
+      $f-size: var(--rem-20),
+      $f-status: capitalize,
+      $f-weight: 500
+    );
+  }
+  // User Image
+  .intro-user-image {
+    // Button
+    .button {
+      .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+      .inputfile + label {
+        background-color: var(--main-color);
+        display: inline-block;
+        @include padding("full", var(--rem-15));
+        cursor: pointer;
+        @include flex-container(
+          $display: flex,
+          $direction: row,
+          $wrap: wrap,
+          $justify: space-between,
+          $align: center,
+          $gap: var(--px-10)
+        );
+        @include radius(var(--px-5));
+        .text {
+          @include text-property(
+            $f-color: var(--color-1),
+            $f-size: var(--rem-13),
+            $f-status: capitalize,
+            $f-weight: 500
+          );
+        }
+      }
+    }
+    // Image
+    .image {
+      display: none;
+      width: 100px;
+      height: 100px;
+      background-color: #fddca94d;
+      @include border("full", var(--main-color), 3px);
+      @include radius(50%);
+      overflow: hidden;
+      &.quiz-user-image {
+        display: block;
+      }
+    }
+  }
+}
+
+// Main chick Mark
+.main-check-mark {
+  display: none;
+  position: relative;
+  background-color: var(--color-15);
+  @include border("full", var(--main-color));
+  @include radius(50%);
+  i {
+    @include center;
+  }
+}

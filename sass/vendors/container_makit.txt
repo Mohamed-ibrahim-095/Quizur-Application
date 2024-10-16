@@ -1,0 +1,60 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+
+// Define breakpoints and container widths
+$breakpoints-and-widths: (
+  xs: (
+    breakpoint: 0,
+    container-width: null // لا توجد قيمة محددة للعرض لـ xs
+  ),
+  sm: (
+    breakpoint: 576px,
+    container-width: 540px
+  ),
+  md: (
+    breakpoint: 768px,
+    container-width: 720px
+  ),
+  lg: (
+    breakpoint: 992px,
+    container-width: 960px
+  ),
+  xl: (
+    breakpoint: 1200px,
+    container-width: 1140px
+  ),
+  xxl: (
+    breakpoint: 1400px,
+    container-width: 1320px
+  )
+);

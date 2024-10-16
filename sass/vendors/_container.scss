@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+.container {
+  // Iterate over each property in $container-property
+  @each $key, $value in $container-property {
+    #{$key}: $value;
+  }
+  // Apply max-width for different breakpoints
+  @each $key, $value in $container-max-widths {
+    @if ($key == "sm") {
+      @include media-query("down", $key) {
+        max-width: 100%;
+      }
+    }
+    @if ($key != "xxl") {
+      @include media-query("single", $key) {
+        max-width: $value;
+      }
+    }
+    @if ($key == "xxl") {
+      @include media-query("up", $key) {
+        max-width: $value;
+      }
+    }
+  }
+}

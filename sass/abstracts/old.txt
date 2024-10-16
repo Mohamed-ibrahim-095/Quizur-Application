@@ -1,0 +1,50 @@
+    // Apply styles at specific min-width breakpoints
+    @if ($type == "up") {
+  
+        @media (min-width: $value) {
+          @content;
+        }
+      
+    }
+    // Apply styles at specific max-width breakpoints
+    @else if ($type == "down") {
+
+        @media (max-width: calc($value - $gutter-space)) {
+          @content;
+        }
+      
+    }
+
+
+    
+@debug $grid-breakpoints;
+// Output the entire $grid-breakpoints map for debugging
+// (sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
+
+@debug map-keys($map: $grid-breakpoints);
+// Output all keys from the $grid-breakpoints map for debugging
+// Keys: sm, md, lg, xl, xxl
+
+@debug map-values($map: $grid-breakpoints);
+// Output all values from the $grid-breakpoints map for debugging
+// Values: 576px, 768px, 992px, 1200px, 1400px
+
+@debug map-get($map: $grid-breakpoints, $key: "sm");
+// Output the value associated with the key "sm" from the $grid-breakpoints map
+// Value: 576px
+
+@debug index(map-keys($map: $grid-breakpoints), "sm");
+// Output the index of the key "sm" in the list of keys from the $grid-breakpoints map
+// Index: 1
+
+@debug index(map-keys($map: $grid-breakpoints), "md");
+// Output the index of the key "md" in the list of keys from the $grid-breakpoints map
+// Index: 2
+
+@debug nth(map-keys($map: $grid-breakpoints), 1);
+// Output the first key in the list of keys from the $grid-breakpoints map
+// Key: sm
+
+@debug nth(map-keys($map: $grid-breakpoints), 2);
+// Output the second key in the list of keys from the $grid-breakpoints map
+// Key: md

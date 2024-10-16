@@ -1,0 +1,33 @@
+@use "../abstracts/" as *;
+
+/* Start Header */
+
+.header {
+  @include border("bottom", var(--border-color));
+  @include padding("top", var(--rem-20));
+  @include padding("bottom", var(--rem-20));
+  .header-content {
+    text-align: center;
+    .app-name {
+      @include flex-container($display: flex, $justify: center);
+      .app-name-link {
+        width: fit-content;
+        display: block;
+        font-family: "Playwrite IT Moderna", cursive;
+        cursor: pointer;
+        @include text-property($f-size: var(--rem-25), $f-weight: 700);
+        .letters {
+          @include text-property($f-color: var(--color-1));
+        }
+        .q-letter {
+          @include text-property(
+            $f-color: var(--main-color),
+            $f-status: uppercase
+          );
+        }
+      }
+    }
+  }
+}
+
+/* End Header */

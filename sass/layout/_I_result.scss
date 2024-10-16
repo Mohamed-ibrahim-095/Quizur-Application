@@ -1,0 +1,37 @@
+@use "../abstracts/" as *;
+
+/* Start Result */
+
+.application-wallpaper {
+  .result {
+    @include flex-container(
+      $display: flex,
+      $direction: column,
+      $wrap: wrap,
+      $justify: center,
+      $align: center,
+      $gap: var(--px-25)
+    );
+    .result-span {
+      @include text-property(
+        $f-color: var(--color-1),
+        $f-size: var(--rem-20),
+        $f-status: capitalize
+      );
+      .text {
+        .degree,
+        .full-mark {
+          @include text-property($f-weight: 600);
+        }
+      }
+    }
+    .retest-again {
+      width: fit-content;
+      @include border("full", var(--color-16), $value: 1px);
+      @include padding("full", var(--rem-10));
+      cursor: pointer;
+    }
+  }
+}
+
+/* End Result */

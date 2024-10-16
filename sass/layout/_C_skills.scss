@@ -1,0 +1,142 @@
+@use "../abstracts/" as *;
+
+/* Start Skills Section */
+
+.skills-container {
+  @include flex-container($display: flex, $wrap: wrap, $gap: var(--px-100));
+  .skills-header,
+  .skills-contnet,
+  .button-container {
+    width: 100%;
+  }
+  // Header
+  .skills-header {
+    @include flex-container(
+      $display: flex,
+      $direction: column,
+      $wrap: wrap,
+      $align: center,
+      $gap: var(--px-15)
+    );
+    .header-title,
+    .header-sub-title {
+      span {
+        display: block;
+        @include text-property($f-status: capitalize);
+      }
+    }
+    .header-title {
+      span {
+        @include text-property(
+          $f-color: var(--color-1),
+          $f-size: var(--rem-30),
+          $f-weight: 600
+        );
+      }
+    }
+    .header-sub-title {
+      text-align: center;
+      span {
+        @include text-property(
+          $f-color: var(--color-4),
+          $f-size: var(--rem-20),
+          $f-weight: 400
+        );
+      }
+    }
+  }
+  // Contnet
+  .skills-contnet {
+    .skills-contnet-box {
+      @include flex-container(
+        $display: flex,
+        $direction: row,
+        $wrap: wrap,
+        $justify: space-between
+      );
+      @include media-query("down", "md") {
+        @include flex-container($justify: center, $gap: var(--px-30));
+      }
+      @include media-query("single", "md") {
+        @include flex-container($justify: space-around, $gap: var(--px-30));
+      }
+      @include media-query("up", "lg") {
+        @include flex-container($justify: space-around);
+      }
+      // Skill Box
+      .skill-box {
+        position: relative;
+        width: 300px;
+        background-color: var(--white-color);
+        box-shadow: var(--main-shadow);
+        @include radius(var(--px-10));
+        @include border("full", var(--border-color), 2px);
+        overflow: hidden;
+        .skill {
+          @include flex-container(
+            $display: flex,
+            $direction: column,
+            $wrap: wrap,
+            $align: center
+          );
+          @include padding("full", var(--rem-15));
+          height: 100%;
+          overflow: hidden;
+          cursor: pointer;
+          .skill-chick-box {
+            align-self: flex-end;
+            width: 23px;
+            height: 23px;
+            @include padding("full", var(--rem-3));
+            @include border("full", var(--main-color), 2px);
+            @include radius(50%);
+            .chick {
+              display: block;
+              width: 100%;
+              height: 100%;
+              @include radius(50%);
+              background-color: var(--color-3);
+            }
+          }
+          .skill-names-box {
+            span {
+              @include text-property(
+                $f-color: var(--color-1),
+                $f-size: var(--rem-20),
+                $f-status: capitalize,
+                $f-weight: 500
+              );
+            }
+          }
+        }
+        // &Active Class
+        &.active {
+          position: relative;
+          z-index: 1;
+          @include border("full", var(--main-color), 2px);
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-5);
+            z-index: -1;
+          }
+          .skill {
+            &::before {
+              width: 0;
+              height: 0;
+            }
+            .skill-chick-box {
+              .chick {
+                background-color: var(--main-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* End Skills Section */

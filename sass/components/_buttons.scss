@@ -1,0 +1,67 @@
+@use "../abstracts/" as *;
+
+/* Start Next Page Button - Index Page */
+.button-container {
+  @include flex-container($display: flex, $justify: flex-end);
+  @include media-query("down", "md") {
+    @include flex-container($justify: center);
+  }
+  .next-button {
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    @include radius(var(--px-3));
+    @include padding("top", var(--rem-15));
+    @include padding("bottom", var(--rem-15));
+    @include padding("left", var(--rem-25));
+    @include padding("right", var(--rem-25));
+    @include flex-container(
+      $display: flex,
+      $direction: row,
+      $align: center,
+      $gap: var(--px-10)
+    );
+    span {
+      @include text-property(
+        $f-color: var(--color-1),
+        $f-size: var(--rem-17),
+        $f-status: capitalize,
+        $f-weight: 500
+      );
+    }
+  }
+}
+/* End Next Page Button - Index Page */
+
+/* Start Main Sign Bottom */
+.main-sign {
+  width: 100%;
+  background-color: var(--main-color);
+  border: none;
+  @include flex-container(
+    $display: flex,
+    $direction: row,
+    $wrap: wrap,
+    $justify: center,
+    $align: center,
+    $gap: var(--px-10)
+  );
+  @include padding("top", var(--rem-12));
+  @include padding("bottom", var(--rem-12));
+  @include radius(var(--px-3));
+  cursor: pointer;
+  .icon {
+    i {
+      font-size: var(--rem-16);
+    }
+  }
+  .text {
+    @include text-property(
+      $f-color: var(--color-1),
+      $f-size: var(--rem-18),
+      $f-status: capitalize,
+      $f-weight: null
+    );
+  }
+}
+/* End Main Sign Bottom */

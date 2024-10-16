@@ -1,0 +1,82 @@
+@use "../abstracts/" as *;
+
+.form-container {
+  .form {
+    &.sign-up {
+      // Validations
+      .form-validation {
+        .validation-list {
+          @include flex-container(
+            $display: flex,
+            $direction: column,
+            $wrap: wrap,
+            $gap: var(--px-5)
+          );
+          li {
+            @include text-property(
+              $f-color: var(--color-8),
+              $f-size: var(--rem-12),
+              $f-status: capitalize
+            );
+            &.valid {
+              @include text-property($f-color: var(--color-9));
+            }
+            &.no-valid {
+              @include text-property($f-color: var(--color-10));
+            }
+          }
+        }
+      }
+      // Approval
+      .form-approval {
+        @include flex-container(
+          $display: flex,
+          $direction: row,
+          $gap: var(--px-15)
+        );
+        .chick-box,
+        .text-box {
+          cursor: pointer;
+        }
+        .chick-box {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          @include border("full", var(--main-color), $value: 1px);
+          .icon {
+            @include center;
+            display: none;
+          }
+          &.valid {
+            .icon {
+              display: block;
+            }
+          }
+          &.no-valid {
+            .icon {
+              display: none;
+            }
+          }
+        }
+        .text-box {
+          .text {
+            @include text-property(
+              $f-size: var(--rem-13),
+              $f-status: capitalize
+            );
+          }
+          &.valid {
+            .text {
+              @include text-property($f-color: null);
+            }
+          }
+          &.no-valid {
+            .text {
+              @include text-property($f-color: var(--color-10));
+            }
+          }
+        }
+      }
+    }
+  }
+}

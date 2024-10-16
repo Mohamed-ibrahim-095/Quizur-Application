@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizur - Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Linking Google Fonts - Roboto font with multiple weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- Master stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Start Haeder -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content quiz-header">
+          <!-- App Name -->
+          <p class="app-name">
+            <span class="app-name-link"
+              ><span class="q-letter">q</span
+              ><span class="letters">uizer</span></span
+            >
+          </p>
+          <!-- User Info -->
+          <div class="intro-header">
+            <div class="intro-user-name">
+              <span class="user-name"></span>
+            </div>
+            <div class="intro-user-image">
+              <!-- Image -->
+              <div class="image quiz-user-image">
+                <img src="../image/User-avatar.svg.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Haeder -->
+    <div class="application-wallpaper">
+      <div class="container">
+        <div class="result">
+          <div class="result-span">
+            <span class="text"
+              >you scored <span class="degree"></span> of
+              <span class="full-mark"></span> questions.</span
+            >
+          </div>
+          <!-- Retest again -->
+          <div class="retest-again">
+            <span class="text">Retest yourself again</span>
+            <span class="icon"><i class="fa-solid fa-rotate-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script JS File -->
+    <script src="../javascript/result.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+/* Start Hero Image */
+
+.hero-image {
+  background-color: var(--color-2);
+  @include border("bottom", var(--border-color));
+  .hero-image-content {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    img {
+      @include center;
+      width: 500px;
+    }
+  }
+}
+
+/* End Hero Image */

@@ -1,0 +1,93 @@
+:root {
+  // Color variants
+  --white-color: white;
+  --black-color: black;
+  // --main-color: #f5ab35;
+  --main-color: #f5bb5e;
+  --color-1: #222222; // Heading
+  --color-2: #fff4e3;
+  --color-3: #f8f8f8;
+  --color-4: #666666;
+  --color-5: #fff4e36b;
+  --color-6: #fddca9;
+  --color-7: #fddca91f;
+  --color-8: #6f6e6e;
+  --color-9: #28a745;
+  --color-10: #dc3545;
+  --color-11: #333333;
+  --color-12: #cccedf;
+  --color-13: #f0f1f6;
+  --color-14: #fddca973;
+  --color-15: #fddca9c4;
+  --color-16: #ababab;
+  --color-17: #dcdde3;
+  --border-color: #e8ebed;
+  --main-shadow: 0 0 40px 0px #e2e2e2;
+  --px-3: 3px;
+  --px-5: 5px;
+  --px-10: 10px;
+  --px-15: 15px;
+  --px-20: 20px;
+  --px-25: 25px;
+  --px-30: 30px;
+  --px-40: 40px;
+  --px-45: 45px;
+  --px-50: 50px;
+  --px-100: 100px;
+  --rem-3: 0.188rem;
+  --rem-5: 0.313rem;
+  --rem-7: 0.438rem;
+  --rem-10: 0.625rem;
+  --rem-12: 0.75rem;
+  --rem-13: 0.813rem;
+  --rem-14: 0.875rem;
+  --rem-15: 0.938rem;
+  --rem-16: 1rem;
+  --rem-17: 1.063rem;
+  --rem-18: 1.125rem;
+  --rem-20: 1.25rem;
+  --rem-22: 1.375rem;
+  --rem-24: 1.5rem;
+  --rem-25: 1.563rem;
+  --rem-30: 1.875rem;
+  --rem-50: 3.125rem;
+  --rem-100: 6.25rem;
+}
+
+// Define breakpoints for responsive grid system
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Define maximum container widths for different breakpoints
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+// Gutter
+$gutter-space: 0.02px;
+
+// Fixed container formats
+$container-property: (
+  padding-left: 15px,
+  padding-right: 15px,
+  margin-left: auto,
+  margin-right: auto,
+  width: 100%,
+);
+
+// A set of prefixes used to support CSS properties across different browsers
+$prefixs: ("webkit", "moz", "ms", "o");
+
+// Direction common
+$directions: (left, top, right, bottom);
+// Other FOnt
+// font-family: "Playwrite IT Moderna", cursive;

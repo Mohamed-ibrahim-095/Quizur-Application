@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizur - Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Linking Google Fonts - Roboto font with multiple weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- Master stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Start Haeder -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content quiz-header">
+          <!-- App Name -->
+          <p class="app-name">
+            <span class="app-name-link"
+              ><span class="q-letter">q</span
+              ><span class="letters">uizer</span></span
+            >
+          </p>
+          <!-- User Info -->
+          <div class="intro-header">
+            <div class="intro-user-name">
+              <span class="user-name"></span>
+            </div>
+            <div class="intro-user-image">
+              <!-- Image -->
+              <div class="image quiz-user-image">
+                <img src="../image/User-avatar.svg.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Haeder -->
+    <div class="application-wallpaper">
+      <div class="container">
+        <div class="quiz-container">
+          <div class="quiz">
+            <div class="quiz-area-box blur-box">
+              <div class="quiz-play"><i class="fa-solid fa-play play"></i></div>
+              <div class="quiz-title">
+                <span class="title"></span>
+              </div>
+              <div class="quiz-content">
+                <ul class="questions-list"></ul>
+              </div>
+              <div class="quiz-send">
+                <button class="main-sign" type="submit">
+                  <span class="icon"
+                    ><i class="fa-solid fa-paper-plane"></i
+                  ></span>
+                  <span class="text">send the answer</span>
+                </button>
+              </div>
+            </div>
+            <div class="quiz-side-box">
+              <div class="quiz-count-down">
+                <div class="count-box">
+                  <div class="count">
+                    <span class="center-count"><span class="time"></span></span>
+                  </div>
+                  <div class="title">Timer : Count Down</div>
+                </div>
+              </div>
+              <div class="quiz-questions-list">
+                <div class="list-hesder"><span>questions list</span></div>
+                <div class="list-contnet">
+                  <ul class="list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script JS File -->
+    <script src="../javascript/quiz.js" type="module"></script>
+    <script src="../javascript/countdown.js" type="module"></script>
+  </body>
+</html>

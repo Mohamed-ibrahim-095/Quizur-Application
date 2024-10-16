@@ -1,0 +1,136 @@
+@use "../abstracts/" as *;
+
+/* Start Side Bar */
+
+.quiz-side-box {
+  @include flex-container(
+    $display: flex,
+    $direction: column,
+    $wrap: wrap,
+    $justify: center,
+    $align: center,
+    $gap: var(--px-15)
+  );
+  width: 250px;
+  @include media-query("down", "lg") {
+    width: 100%;
+  }
+  .quiz-count-down,
+  .quiz-questions-list {
+    width: 100%;
+    @include radius(var(--px-5));
+  }
+  // Count Down
+  .quiz-count-down {
+    box-shadow: var(--main-shadow);
+    .count-box {
+      @include padding("full", var(--rem-20));
+      @include flex-container(
+        $display: flex,
+        $direction: column,
+        $wrap: wrap,
+        $justify: center,
+        $align: center,
+        $gap: var(--px-15)
+      );
+      .count {
+        position: relative;
+        width: 110px;
+        height: 110px;
+        @include radius(50%);
+        background: conic-gradient(
+          var(--main-color) 360deg,
+          var(--color-17) 0,
+          var(--color-17) 0
+        );
+        .center-count {
+          @include flex-container(
+            $display: flex,
+            $wrap: wrap,
+            $justify: center,
+            $align: center
+          );
+          @include radius(50%);
+          @include center;
+          width: 82%;
+          height: 82%;
+          background-color: #fff;
+          z-index: 1;
+        }
+      }
+    }
+  }
+  // quiz-questions-list
+  .quiz-questions-list {
+    box-shadow: var(--main-shadow);
+    .list-hesder {
+      @include text-property(
+        $f-color: var(--color-1),
+        $f-size: var(--rem-18),
+        $f-status: capitalize,
+        $f-weight: 500
+      );
+      @include padding("full", var(--rem-20));
+      @include border("bottom", var(--border-color));
+    }
+    .list-contnet {
+      @include padding("full", var(--rem-15));
+      .list {
+        @include flex-container(
+          $display: flex,
+          $direction: column,
+          $wrap: wrap,
+          $gap: var(--px-10)
+        );
+        @include media-query("down", "lg") {
+          @include flex-container($direction: row);
+        }
+        .line {
+          background-color: var(--color-13);
+          @include padding("full", var(--rem-10));
+          @include radius(var(--px-5));
+          @include flex-container(
+            $display: flex,
+            $direction: row,
+            $wrap: wrap,
+            $justify: space-between,
+            $align: center
+          );
+          @include media-query("down", "lg") {
+            flex-grow: 1;
+          }
+          .text {
+            display: block;
+            @include text-property(
+              $f-color: var(--color-16),
+              $f-size: var(--rem-14),
+              $f-status: capitalize,
+              $f-weight: 400
+            );
+          }
+          .main-chick-mark {
+            width: 20px;
+            height: 20px;
+            @include media-query("down", "lg") {
+              display: none;
+            }
+          }
+          &.active {
+            background-color: var(--color-15);
+            .text {
+              @include text-property($f-color: var(--color-1), $f-weight: 500);
+            }
+            .main-chick-mark {
+              display: block;
+              @include media-query("down", "lg") {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* End Side Bar */

@@ -1,0 +1,61 @@
+@use "../abstracts/" as *;
+
+/* Start Quiz Intro */
+.quiz-intro {
+  @include flex-container(
+    $display: flex,
+    $direction: row,
+    $wrap: wrap,
+    $justify: center,
+    $align: center
+  );
+  .intro-box {
+    @include flex-container(
+      $display: flex,
+      $direction: column,
+      $wrap: wrap,
+      $gap: var(--px-50)
+    );
+    background-color: var(--white-color);
+    width: 600px;
+    @include padding("full", var(--rem-30));
+    box-shadow: var(--main-shadow);
+    // Content
+    .intro-contnet {
+      .description-quiz {
+        @include flex-container(
+          $display: flex,
+          $direction: column,
+          $wrap: wrap,
+          $gap: var(--px-20)
+        );
+        .desc {
+          @include flex-container(
+            $display: flex,
+            $direction: row,
+            $align: flex-start,
+            $gap: var(--px-15)
+          );
+          .icon {
+            i {
+              display: block;
+              @include text-property(
+                $f-color: var(--main-color),
+                $f-size: var(--rem-22)
+              );
+            }
+          }
+          .text {
+            display: block;
+            line-height: 1.5;
+            @include text-property(
+              $f-color: var(--color-4),
+              $f-size: var(--rem-15)
+            );
+          }
+        }
+      }
+    }
+  }
+}
+/* End Quiz Intro */

@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Inherit the box-sizing value from the parent element */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  @include prefixs(user-select, none);
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-3);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+/* Set the base font for the entire document */
+body {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Remove the underline from all links */
+a {
+  text-decoration: none;
+}
+
+/* Remove default list styling */
+ul {
+  list-style: none;
+}
+
+/* Make images responsive and align them at the bottom */
+img {
+  width: 100%;
+  vertical-align: bottom;
+}

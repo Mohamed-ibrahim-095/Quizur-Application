@@ -1,0 +1,364 @@
+[
+    {
+        "frontend": [
+            {
+                "question": "What data type represents text in JavaScript?",
+                "answers": {
+                    "one": "Number",
+                    "two": "String",
+                    "three": "Boolean",
+                    "four": "Object"
+                },
+                "rightAnswer": "String"
+            },
+            {
+                "question": "What is the correct way to declare a variable in JavaScript?",
+                "answers": {
+                    "one": "var name = value;",
+                    "two": "let name = value;",
+                    "three": "const name = value;",
+                    "four": "All of the above"
+                },
+                "rightAnswer": "All of the above"
+            },
+            {
+                "question": "What is the difference between var and let in JavaScript?",
+                "answers": {
+                    "one": "var has global scope while let has block scope.",
+                    "two": "var is re-assignable while let is not re-assignable.",
+                    "three": "var can be used before it is declared while let cannot be used before it is declared.",
+                    "four": "Both A and B are correct."
+                },
+                "rightAnswer": "var has global scope while let has block scope."
+            },
+            {
+                "question": "What is the correct way to create a function in JavaScript?",
+                "answers": {
+                    "one": "function functionName() { ... }",
+                    "two": "def functionName():",
+                    "three": "=> functionName() { ... }",
+                    "four": "fun functionName() { ... }"
+                },
+                "rightAnswer": "function functionName() { ... }"
+            },
+            {
+                "question": "What is the difference between a returning function and a void function in JavaScript?",
+                "answers": {
+                    "one": "A returning function returns a value while a void function does not return any value.",
+                    "two": "A returning function can be used anywhere while a void function can only be used in expressions.",
+                    "three": "A returning function requires a return keyword while a void function does not.",
+                    "four": "Both A and C are correct."
+                },
+                "rightAnswer": "Both A and C are correct."
+            },
+            {
+                "question": "What is an array in JavaScript?",
+                "answers": {
+                    "one": "An ordered collection of values.",
+                    "two": "A variable that can store multiple values.",
+                    "three": "An object that can store data and functions.",
+                    "four": "Both A and B are correct."
+                },
+                "rightAnswer": "Both A and B are correct."
+            },
+            {
+                "question": "What is the correct way to access an element in an array in JavaScript?",
+                "answers": {
+                    "one": "array[index]",
+                    "two": "array.get(index)",
+                    "three": "array(index)",
+                    "four": "array.index"
+                },
+                "rightAnswer": "array[index]"
+            },
+            {
+                "question": "What is the correct way to add an element to the end of an array in JavaScript?",
+                "answers": {
+                    "one": "array.push(element)",
+                    "two": "array.add(element)",
+                    "three": "array[length] = element",
+                    "four": "array.append(element)"
+                },
+                "rightAnswer": "array.push(element)"
+            },
+            {
+                "question": "What is the correct way to remove an element from an array in JavaScript?",
+                "answers": {
+                    "one": "array.pop()",
+                    "two": "array.delete(index)",
+                    "three": "array.remove(element)",
+                    "four": "array.shift()"
+                },
+                "rightAnswer": "array.pop()"
+            },
+            {
+                "question": "What is an object in JavaScript?",
+                "answers": {
+                    "one": "A collection of data and functions.",
+                    "two": "A variable that can store multiple values.",
+                    "three": "An ordered collection of values.",
+                    "four": "A function that can return a value."
+                },
+                "rightAnswer": "A collection of data and functions."
+            },
+            {
+                "question": "What is a property in a JavaScript object?",
+                "answers": {
+                    "one": "A name associated with a value.",
+                    "two": "A variable inside an object.",
+                    "three": "A function inside an object.",
+                    "four": "Both A and B are correct."
+                },
+                "rightAnswer": "Both A and B are correct."
+            },
+            {
+                "question": "What is the correct way to access a property in a JavaScript object?",
+                "answers": {
+                    "one": "object.property",
+                    "two": "object[\"property\"]",
+                    "three": "object(property)",
+                    "four": "object.getProperty(property)"
+                },
+                "rightAnswer": "object.property"
+            },
+            {
+                "question": "What is the correct way to create a new object in JavaScript?",
+                "answers": {
+                    "one": "var object = {};",
+                    "two": "object = new Object();",
+                    "three": "Both A and B are correct.",
+                    "four": "There is no correct way to create an object in JavaScript."
+                },
+                "rightAnswer": "Both A and B are correct."
+            },
+            {
+                "question": "What is the difference between inheritance and composition in JavaScript?",
+                "answers": {
+                    "one": "Inheritance allows one object to inherit properties and methods from another object, while composition allows one object to contain other objects as properties.",
+                    "two": "Inheritance is a static relationship, while composition is a dynamic relationship.",
+                    "three": "Inheritance is used to create new classes, while composition is used to create new objects.",
+                    "four": "All of the above are correct."
+                },
+                "rightAnswer": "All of the above are correct."
+            },
+            {
+                "question": "What is the event loop in JavaScript?",
+                "answers": {
+                    "one": "A single thread that executes JavaScript code in a non-blocking manner.",
+                    "two": "A queue that stores events waiting to be processed.",
+                    "three": "A mechanism that allows JavaScript to handle multiple tasks concurrently.",
+                    "four": "All of the above are correct."
+                },
+                "rightAnswer": "All of the above are correct."
+            }
+        ]
+    },
+    {
+        "backend": [
+            {
+                "question": "What is a list comprehension in Python?",
+                "answers": {
+                    "one": "A method for creating a new list from an existing list.",
+                    "two": "A method for reading a list from a file.",
+                    "three": "A method for sorting a list.",
+                    "four": "A method for iterating over a list."
+                },
+                "rightAnswer": "A method for creating a new list from an existing list."
+            },
+            {
+                "question": "Which of the following is used to handle exceptions in Python?",
+                "answers": {
+                    "one": "catch",
+                    "two": "try/except",
+                    "three": "error",
+                    "four": "throw"
+                },
+                "rightAnswer": "try/except"
+            },
+            {
+                "question": "What does the 'self' keyword represent in a Python class?",
+                "answers": {
+                    "one": "The class itself.",
+                    "two": "A local variable inside the class.",
+                    "three": "An instance of the class.",
+                    "four": "A global variable accessible by all classes."
+                },
+                "rightAnswer": "An instance of the class."
+            },
+            {
+                "question": "What is the purpose of the 'with' statement in Python?",
+                "answers": {
+                    "one": "To handle exceptions.",
+                    "two": "To create a loop.",
+                    "three": "To open and close resources safely.",
+                    "four": "To define a function."
+                },
+                "rightAnswer": "To open and close resources safely."
+            },
+            {
+                "question": "What is a decorator in Python?",
+                "answers": {
+                    "one": "A design pattern used to add new functionality to an existing object.",
+                    "two": "A function that modifies the behavior of another function.",
+                    "three": "A special type of variable.",
+                    "four": "A loop control statement."
+                },
+                "rightAnswer": "A function that modifies the behavior of another function."
+            },
+            {
+                "question": "Which of the following methods can be used to add an element to a set in Python?",
+                "answers": {
+                    "one": "append()",
+                    "two": "add()",
+                    "three": "insert()",
+                    "four": "extend()"
+                },
+                "rightAnswer": "add()"
+            },
+            {
+                "question": "What is the output of the following code: print(type(10.0))?",
+                "answers": {
+                    "one": "<class 'int'>",
+                    "two": "<class 'float'>",
+                    "three": "<class 'double'>",
+                    "four": "<class 'decimal'>"
+                },
+                "rightAnswer": "<class 'float'>"
+            },
+            {
+                "question": "How can you create an empty dictionary in Python?",
+                "answers": {
+                    "one": "dict = []",
+                    "two": "dict = ()",
+                    "three": "dict = {}",
+                    "four": "dict = set()"
+                },
+                "rightAnswer": "dict = {}"
+            },
+            {
+                "question": "What is the difference between 'is' and '==' in Python?",
+                "answers": {
+                    "one": "'is' checks for value equality, '==' checks for reference equality.",
+                    "two": "'is' checks for reference equality, '==' checks for value equality.",
+                    "three": "'is' is used for strings, '==' is used for numbers.",
+                    "four": "There is no difference."
+                },
+                "rightAnswer": "'is' checks for reference equality, '==' checks for value equality."
+            },
+            {
+                "question": "What is the purpose of the 'pass' statement in Python?",
+                "answers": {
+                    "one": "To exit a loop.",
+                    "two": "To raise an exception.",
+                    "three": "To do nothing and continue with the next statement.",
+                    "four": "To define a function."
+                },
+                "rightAnswer": "To do nothing and continue with the next statement."
+            }
+        ]
+    },
+    {
+        "designer": [
+            {
+                "question": "What is the main purpose of using layers in Photoshop?",
+                "answers": {
+                    "one": "To apply filters to images.",
+                    "two": "To organize different elements of a design separately.",
+                    "three": "To edit images non-destructively.",
+                    "four": "Both B and C are correct."
+                },
+                "rightAnswer": "Both B and C are correct."
+            },
+            {
+                "question": "Which tool in Photoshop is used to remove blemishes and imperfections from a photo?",
+                "answers": {
+                    "one": "Magic Wand Tool",
+                    "two": "Clone Stamp Tool",
+                    "three": "Healing Brush Tool",
+                    "four": "Blur Tool"
+                },
+                "rightAnswer": "Healing Brush Tool"
+            },
+            {
+                "question": "What is the main advantage of vector art over raster art?",
+                "answers": {
+                    "one": "It uses more colors.",
+                    "two": "It can be scaled to any size without losing quality.",
+                    "three": "It is easier to create.",
+                    "four": "It requires less memory."
+                },
+                "rightAnswer": "It can be scaled to any size without losing quality."
+            },
+            {
+                "question": "Which file format is commonly used for vector graphics?",
+                "answers": {
+                    "one": ".jpg",
+                    "two": ".png",
+                    "three": ".svg",
+                    "four": ".gif"
+                },
+                "rightAnswer": ".svg"
+            },
+            {
+                "question": "In Adobe Illustrator, what is the Pen Tool primarily used for?",
+                "answers": {
+                    "one": "Drawing straight and curved lines.",
+                    "two": "Filling shapes with color.",
+                    "three": "Adding text to designs.",
+                    "four": "Applying gradients."
+                },
+                "rightAnswer": "Drawing straight and curved lines."
+            },
+            {
+                "question": "What does the term 'non-destructive editing' mean in the context of photo editing software?",
+                "answers": {
+                    "one": "Editing that does not alter the original image file.",
+                    "two": "Editing that improves the quality of the image.",
+                    "three": "Editing that speeds up the workflow.",
+                    "four": "Editing that uses less memory."
+                },
+                "rightAnswer": "Editing that does not alter the original image file."
+            },
+            {
+                "question": "Which of the following tools in Photoshop is used to make precise selections based on color and texture?",
+                "answers": {
+                    "one": "Lasso Tool",
+                    "two": "Quick Selection Tool",
+                    "three": "Magic Wand Tool",
+                    "four": "Pen Tool"
+                },
+                "rightAnswer": "Quick Selection Tool"
+            },
+            {
+                "question": "What is the purpose of using masks in Photoshop?",
+                "answers": {
+                    "one": "To hide or reveal parts of a layer.",
+                    "two": "To apply filters to an image.",
+                    "three": "To adjust the brightness of an image.",
+                    "four": "To resize an image."
+                },
+                "rightAnswer": "To hide or reveal parts of a layer."
+            },
+            {
+                "question": "Which software is most commonly used for creating and editing vector graphics?",
+                "answers": {
+                    "one": "Adobe Photoshop",
+                    "two": "Adobe Illustrator",
+                    "three": "CorelDRAW",
+                    "four": "Both B and C are correct."
+                },
+                "rightAnswer": "Both B and C are correct."
+            },
+            {
+                "question": "What is a 'smart object' in Photoshop?",
+                "answers": {
+                    "one": "A layer that contains image data from raster or vector images.",
+                    "two": "A tool for creating 3D objects.",
+                    "three": "A filter that enhances image sharpness.",
+                    "four": "A type of mask used for blending layers."
+                },
+                "rightAnswer": "A layer that contains image data from raster or vector images."
+            }
+        ]
+    }
+]

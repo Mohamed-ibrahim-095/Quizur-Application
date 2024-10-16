@@ -1,0 +1,132 @@
+@use "../abstracts/" as *;
+
+/* Start Main Form Sign up And Sin in */
+
+.form-container {
+  @include flex-container(
+    $display: flex,
+    $direction: row,
+    $wrap: wrap,
+    $justify: center
+  );
+  .form {
+    background-color: var(--white-color);
+    box-shadow: var(--main-shadow);
+    @include border("full", var(--main-color), $value: 1px);
+    @include padding("full", var(--rem-30));
+    width: 450px;
+    @include media-query("down", "sm") {
+      @include padding("full", var(--rem-15));
+    }
+    &.sign {
+      @include flex-container(
+        $display: flex,
+        $direction: column,
+        $wrap: wrap,
+        $justify: center,
+        $align: center,
+        $gap: var(--px-30)
+      );
+      // Sign Logo
+      .form-header-box {
+        p {
+          @include text-property(
+            $f-color: var(--color-1),
+            $f-size: var(--rem-24),
+            $f-status: capitalize,
+            $f-weight: 700
+          );
+          .first,
+          .second {
+            @include text-property($f-color: var(--main-color));
+          }
+        }
+      }
+      // Form
+      .form-contnet-box {
+        width: 100%;
+        @include flex-container(
+          $display: flex,
+          $direction: column,
+          $wrap: wrap,
+          $gap: var(--px-30)
+        );
+        // Inputs
+        .form-inputs {
+          @include flex-container(
+            $display: flex,
+            $direction: column,
+            $wrap: wrap,
+            $gap: var(--px-15)
+          );
+          // Input Box
+          .input-box {
+            position: relative;
+            input {
+              width: 100%;
+              background-color: var(--color-7);
+              @include padding("top", var(--rem-13));
+              @include padding("bottom", var(--rem-13));
+              @include padding("left", var(--rem-7));
+              @include padding("right", var(--rem-7));
+              @include radius(var(--px-3));
+              @include border("full", var(--color-6), $value: 1px);
+              outline: none;
+              &::placeholder {
+                @include text-property(
+                  $f-color: #aaa,
+                  $f-size: var(--rem-12),
+                  $f-status: capitalize
+                );
+              }
+              // remove the eye from a password field
+              &[type="password"]::-ms-reveal {
+                display: none;
+              }
+              // No valid
+              &.no-valid {
+                @include border("full", var(--color-10), $value: 1px);
+              }
+            }
+            .input-icon {
+              position: absolute;
+              top: 50%;
+              right: var(--rem-7);
+              @include prefixs(transform, translateY(-50%));
+              i {
+                color: var(--main-color);
+              }
+            }
+            #show-password {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      // Chick Acount
+      .form-footer-box {
+        @include flex-container(
+          $display: flex,
+          $direction: row,
+          $wrap: wrap,
+          $gap: var(--px-10)
+        );
+        @include text-property($f-size: var(--rem-16), $f-status: capitalize);
+        .text,
+        .link {
+          display: block;
+        }
+        .text {
+          @include text-property($f-color: var(--color-1));
+        }
+        .link {
+          a {
+            @include text-property($f-color: var(--main-color));
+          }
+        }
+      }
+    }
+  }
+}
+
+/* End Main Form Sign up And Sin in */

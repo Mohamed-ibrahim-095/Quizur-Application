@@ -1,0 +1,135 @@
+@use "./variables" as *;
+@use "sass:meta";
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+// Breakpoints define responsive behavior across device sizes or viewport widths.
+@mixin media-query($type, $size, $last-size: null) {
+  @each $key, $value in $grid-breakpoints {
+    @if ($size == $key) {
+      // Apply styles at specific min-width breakpoints
+      @if ($type == "up") {
+        @media (min-width: $value) {
+          @content;
+        }
+      }
+      // Apply styles at specific max-width breakpoints
+      @else if ($type == "down") {
+        @media (max-width: calc($value - $gutter-space)) {
+          @content;
+        }
+      }
+      // Apply styles Single breakpoint specific min-width and max-width breakpoints
+      @else if ($type == "single" and $size != "xxl") {
+        $next-key: nth(
+          map-keys($grid-breakpoints),
+          calc(index(map-keys($grid-breakpoints), $key) + 1)
+        );
+        $next-value: map-get($grid-breakpoints, $next-key);
+        @media (min-width: $value) and (max-width: calc($next-value - $gutter-space)) {
+          @content;
+        }
+      }
+      // Apply styles between breakpoint specific min-width and max-width breakpoints
+      @else if ($type == "between") {
+        $first-point: index(
+          map-keys(
+            $map: $grid-breakpoints,
+          ),
+          $key
+        );
+        $last-point: index(
+          map-keys(
+            $map: $grid-breakpoints,
+          ),
+          $last-size
+        );
+        // Ensure the first breakpoint comes before the last breakpoint
+        @if ($first-point < $last-point) {
+          @media (min-width: map-get($grid-breakpoints, $size)) and (max-width: calc(map-get($grid-breakpoints, $last-size) - $gutter-space)) {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mixin to apply vendor prefixes to a CSS property for cross-browser compatibility
+@mixin prefixs($property, $value) {
+  @each $key in $prefixs {
+    -#{$key}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Mixin - Flex Container for setting up Flexbox properties
+@mixin flex-container(
+  $display: null,
+  $direction: null,
+  $wrap: null,
+  $justify: null,
+  $align: null,
+  $gap: null
+) {
+  display: $display;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// This mixin sets various text properties including color, font size, text transform, and font weight.
+@mixin text-property(
+  $f-color: null,
+  $f-size: null,
+  $f-status: null,
+  $f-weight: null
+) {
+  color: $f-color;
+  font-size: $f-size;
+  text-transform: $f-status;
+  font-weight: $f-weight;
+}
+
+// This mixin centers an element both horizontally and vertically using absolute positioning and CSS transforms.
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefixs(transform, translate(-50%, -50%));
+}
+
+// This mixin applies a border to an element, either fully or to a specified direction.
+// It accepts direction, color, and border width as arguments.
+@mixin border($dir, $color, $value: 1px) {
+  @if $dir == "full" {
+    border: #{$value} solid $color;
+  } @else {
+    @each $key in $directions {
+      @if $key == $dir {
+        border-#{$dir}: #{$value} solid $color;
+      }
+    }
+  }
+}
+
+// Padding
+@mixin padding($dir, $value) {
+  @if $dir == "full" {
+    padding: $value;
+  } @else {
+    @each $key in $directions {
+      @if $key == $dir {
+        padding-#{$dir}: $value;
+      }
+    }
+  }
+}
+
+// Border - Radius
+@mixin radius($value) {
+  border-radius: $value;
+}
